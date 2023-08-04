@@ -48,8 +48,12 @@ class Solution:
                 elif input_time[3] == "1":
                     return f"It's {hour[h]} {min[tm]} pm"
                 elif input_time[3] == "2" or "3" or "4" or "5":
-                    tm = int(input_time[3] + "0")
-                    return f"It's {hour[h]} {min[tm]} {hour[m]} pm"
+                    if input_time[4] == "0":
+                        tm = int(input_time[3] + "0")
+                        return f"It's {hour[h]} {min[tm]} pm"
+                    else:
+                        tm = int(input_time[3] + "0")
+                        return f"It's {hour[h]} {min[tm]} {hour[m]} pm"
             else:
                 if input_time[3] == "0" and input_time[4] == "0":
                     return f"It's {hour[h]} am"
@@ -58,7 +62,12 @@ class Solution:
                 elif input_time[3] == "1":
                     return f"It's {hour[h]} {min[tm]} am"
                 elif input_time[3] == "2" or "3" or "4" or "5":
-                    return f"It's {hour[h]} {min[tm]} {hour[m]} am"
+                    if input_time[4] == "0":
+                        tm = int(input_time[3] + "0")
+                        return f"It's {hour[h]} {min[tm]} am"
+                    else:
+                        tm = int(input_time[3] + "0")
+                        return f"It's {hour[h]} {min[tm]} {hour[m]} am"
 
 
 def main():
